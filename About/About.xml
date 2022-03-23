@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modMetaData>
+  <packageId>shavius.VEpatches</packageId>
+  <name>Shavius's Vanilla Expanded Patches</name>
+  <loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Owlchemist.SimpleChains.Steel</li>
+	</loadAfter>
+  <author>AOBA,Shavius</author>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <description>Patches that extends automatic factories from Vanilla Faction Expanded - Mechanoids to other mods related to expansion of material industy.
+</description>
+</modMetaData>
