@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Simple Chains: Leather</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Alpha Animals</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<success>Always</success>
+						<operations>
+							<!-- add the new hides -->
+							<li Class="PatchOperationAdd">
+								<xpath>Defs</xpath>
+								<value>
+									<ThingDef ParentName="HideBase">
+										<defName>Hide_SandLion</defName>
+										<label>sand lion hide</label>
+										<graphicData>
+											<color>(178,129,100)</color>
+										</graphicData>
+									</ThingDef>
+									<ThingDef ParentName="HideBase">
+										<defName>Hide_Night</defName>
+										<label>night hide</label>
+										<graphicData>
+											<color>(10,10,10)</color>
+										</graphicData>
+									</ThingDef>
+									
+									<!-- Add custom defs -->
+									<ProcessorFramework.ProcessDef ParentName="Owl_LeatherProcessBase">
+										<defName>Owl_SandLion_Leather</defName>
+										<thingDef>AA_SandLion_Leather</thingDef>
+										<ingredientFilter>
+											<thingDefs>
+												<li>Hide_SandLion</li>
+											</thingDefs>
+										</ingredientFilter>
+									</ProcessorFramework.ProcessDef>
+									<ProcessorFramework.ProcessDef ParentName="Owl_LeatherProcessBase">
+										<defName>Owl_Leather_Night</defName>
+										<thingDef>Leather_Night</thingDef>
+										<ingredientFilter>
+											<thingDefs>
+												<li>Hide_Night</li>
+											</thingDefs>
+										</ingredientFilter>
+									</ProcessorFramework.ProcessDef>
+								</value>
+							</li>
+							
+							<!-- apply the new hides -->
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef/race/leatherDef[text()="AA_SandLion_Leather"]</xpath>
+								<value>
+									<leatherDef>Hide_SandLion</leatherDef>
+								</value>
+							</li>
+							<li Class="PatchOperationReplace">
+								<xpath>Defs/ThingDef/race/leatherDef[text()="Leather_Night"]</xpath>
+								<value>
+									<leatherDef>Hide_Night</leatherDef>
+								</value>
+							</li>
+							
+							<!-- Add the tanning vat data -->
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/ThingDef[defName="Owl_TanningVat"]/comps/li[@Class="ProcessorFramework.CompProperties_Processor"]/processes</xpath>
+								<value>
+									<li>Owl_SandLion_Leather</li>
+									<li>Owl_Leather_Night</li>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Ducks</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<success>Always</success>
+			<operations>
+				<li Class="PatchOperationAttributeAdd">
+                    <xpath>/Defs/ThingDef[
+                        defName="ZDuck_ArcticRazorbill" or
+                        defName="ZDuck_Bufflehead" or
+                        defName="ZDuck_Cayuga" or
+                        defName="ZDuck_DesertRazorbill" or
+                        defName="ZDuck_Ducky" or
+                        defName="ZDuck_EiderPintail" or
+                        defName="ZDuck_GreaterMallard" or
+                        defName="ZDuck_Quackodile" or
+                        defName="ZDuck_RudderDuck"]</xpath>
+                    <attribute>ADogSaidBody</attribute>
+                    <value>Legs</value>
+                </li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

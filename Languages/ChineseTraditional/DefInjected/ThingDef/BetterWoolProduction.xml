@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <!-- Ducks -->
+    <BWP_BuffledownFleece.label>鵲鴨原毛</BWP_BuffledownFleece.label>
+    <BWP_BuffledownFleece.description>鵲鴨身上剛剪下的原毛，可以加工成有用的毛料</BWP_BuffledownFleece.description>
+
+    <BWP_EiderdownFleece.label>鴨絨原毛</BWP_EiderdownFleece.label>
+    <BWP_EiderdownFleece.description>絨鴨身上剛剪下的原毛，可以加工成有用的毛料</BWP_EiderdownFleece.description>
+  
+
+</LanguageData>
